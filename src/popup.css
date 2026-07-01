@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 360px;
+  max-width: 420px;
+  font: 13px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #1f2933;
+  background: #f8fafc;
+}
+
+button {
+  border: 1px solid #b8c4d6;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #1f2933;
+  cursor: pointer;
+  font: inherit;
+  min-height: 30px;
+  padding: 5px 10px;
+}
+
+button:hover {
+  background: #eef4ff;
+}
+
+button:disabled {
+  background: #eef1f5;
+  color: #94a3b8;
+  cursor: not-allowed;
+}
+
+.popup {
+  padding: 12px;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 16px;
+  line-height: 1.2;
+  margin: 0 0 4px;
+}
+
+p {
+  color: #62748a;
+  margin: 0;
+}
+
+.empty {
+  border: 1px dashed #b8c4d6;
+  border-radius: 8px;
+  color: #62748a;
+  padding: 16px;
+  text-align: center;
+}
+
+.filters {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.filter {
+  flex: 1;
+  min-height: 28px;
+  padding: 4px 6px;
+}
+
+.filter.active {
+  background: #315f9d;
+  border-color: #315f9d;
+  color: #ffffff;
+}
+
+.list {
+  display: grid;
+  gap: 8px;
+  max-height: 420px;
+  overflow: auto;
+}
+
+.item {
+  border: 1px solid #d6dee9;
+  border-radius: 8px;
+  background: #ffffff;
+  padding: 10px;
+}
+
+.item-title {
+  font-weight: 600;
+  margin-bottom: 4px;
+  overflow-wrap: anywhere;
+}
+
+.item-meta {
+  color: #62748a;
+  font-size: 12px;
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.item-status {
+  border-radius: 999px;
+  display: inline-block;
+  font-size: 12px;
+  margin-bottom: 8px;
+  padding: 2px 8px;
+}
+
+.item-status.ok {
+  background: #e6f8ef;
+  color: #176d42;
+}
+
+.item-status.checking,
+.item-status.unchecked,
+.item-status.unknown,
+.item-status.error {
+  background: #eef4ff;
+  color: #315f9d;
+}
+
+.item-status.forbidden,
+.item-status.missing {
+  background: #fff1f0;
+  color: #9b2c2c;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.actions button {
+  flex: 1;
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 10px;
+}

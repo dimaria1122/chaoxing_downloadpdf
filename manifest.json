@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Chaoxing PDF Downloader",
+  "description": "Finds PDF/courseware links already loaded by Chaoxing/Xuexitong pages and lets you download them.",
+  "version": "0.1.0",
+  "permissions": ["downloads", "storage", "tabs", "scripting"],
+  "host_permissions": [
+    "*://*.chaoxing.com/*",
+    "*://*.chaoxing.cn/*",
+    "*://*.xuexitong.com/*",
+    "*://*.ananas.chaoxing.com/*"
+  ],
+  "background": {
+    "service_worker": "src/background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "src/popup.html",
+    "default_title": "Chaoxing PDF Downloader"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.chaoxing.com/*",
+        "*://*.chaoxing.cn/*",
+        "*://*.xuexitong.com/*"
+      ],
+      "js": ["src/page-hook.js"],
+      "run_at": "document_start",
+      "all_frames": true,
+      "world": "MAIN"
+    },
+    {
+      "matches": [
+        "*://*.chaoxing.com/*",
+        "*://*.chaoxing.cn/*",
+        "*://*.xuexitong.com/*"
+      ],
+      "js": ["src/content.js"],
+      "run_at": "document_start",
+      "all_frames": true
+    }
+  ]
+}

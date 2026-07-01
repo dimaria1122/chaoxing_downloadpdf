@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chaoxing PDF Downloader</title>
+    <link rel="stylesheet" href="popup.css">
+  </head>
+  <body>
+    <main class="popup">
+      <header class="header">
+        <div>
+          <h1>学习通课件</h1>
+          <p id="status">正在读取当前标签页...</p>
+        </div>
+        <button id="refresh" type="button">扫描</button>
+      </header>
+
+      <section id="empty" class="empty" hidden>
+        刷新学习通课件页面后再打开此弹窗。
+      </section>
+
+      <nav class="filters" aria-label="资源类型">
+        <button class="filter active" type="button" data-filter="all">全部</button>
+        <button class="filter" type="button" data-filter="pdf">PDF</button>
+        <button class="filter" type="button" data-filter="image">图片</button>
+        <button class="filter" type="button" data-filter="script">脚本</button>
+        <button class="filter" type="button" data-filter="other">其它</button>
+      </nav>
+
+      <section id="list" class="list" aria-live="polite"></section>
+
+      <footer class="footer">
+        <button id="clear" type="button">清空</button>
+      </footer>
+    </main>
+    <script type="module" src="popup.js"></script>
+  </body>
+</html>
